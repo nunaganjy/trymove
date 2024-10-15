@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjanette ૮₍´˶• . • ⑅ ₎ა</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins';
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        header {
+            background-color: #43b14b;
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+            width: 100%;
+        }
+        .music-player {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        background-color: #0040ff; 
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        animation: slideIn 1s forwards; 
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%); 
+        }
+        to {
+            transform: translateX(0); 
+        }
+    }
+    .cover {
+        width: 60px; 
+        border-radius: 5px;
+        margin-right: 10px; 
+    }
+
+    .controls {
+        display: flex;
+        align-items: center; 
+    }
+
+    .button {
+        background: none;
+        border: none;
+        color: white; 
+        font-size: 20px; 
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .button:hover {
+        opacity: 0.8; 
+    }
+        img {
+            max-width: 200px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        .favorites {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .favorite-item {
+        
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            max-width: 250px;
+            flex: 1 1 200px;
+            margin: 10px;
+            transition: transform 0.2s;
+            font-size: 15px;
+            height: 460px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .favorite-item:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: justify;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .favorites {
+                flex-direction: column;
+                align-items: center;
+            }
+            .favorite-item {
+                max-width: 100%;
+            }
+        }
+
+        .favorite-item img {
+            max-width: 60%; 
+            height: 200px; 
+            margin: 0 auto; 
+        }
+        
+        .letter-container {
+            text-align: center;
+            margin: 10px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #c8e6c9;
+            max-width: 480px;
+        }
+
+        .letter-content {
+            margin-top: 10px;
+            display: none;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #a16ae8;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .btn-custom {
+            background-color: #c0a2e7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #8048c9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #43b14b;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about {
+            padding-top: 20px;
+            background-image: url('LASTTT.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            width: 98.8vw;
+            margin: 0;
+            border: none;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: calc(45% - 40px);
+            transition: transform 0.2s;
+        }
+
+        .anjy, .book {
+            color: #a16ae8;
+        }
+
+        .interest, .song {
+            color: #0040ff;
+        }
+
+        .pol, .series {
+            color: #ff0000;
+        }
+
+        .hike, .comfortdocu {
+            color: #43b14b;
+        }
+
+        .anjy:hover {
+            background-color: #e1bee7;
+        }
+
+        .interest:hover {
+            background-color: #bbdefb;
+        }
+
+        .pol:hover {
+            background-color: #ffccbc;
+        }
+
+        .hike:hover {
+            background-color: #c8e6c9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: calc(100% - 40px);
+            }
+        }
+        
+    .container:hover {
+        transform: scale(1.05);
+    }
+
+    .book {
+    background-color: #d1c4e9; 
+}
+
+    .song {
+        background-color: #bbdefb; 
+    }
+
+    .series {
+        background-color: #ffccbc; 
+    }
+
+    .docuseries {
+        background-color: #c8e6c9; 
+    }
+    
+
+    </style>
+</head>
+<body>
+    <header>
+    <h4>anjanette ૮₍´˶• . • ⑅ ₎ა</h4>
+</header>
+    
+    <div class="music-player">
+        <img src="BOAF.jpg" alt="Cover" class="cover">
+        <div class="player-info">
+            <div class="title">Birds of a Feather</div>
+            <div class="artist">Billie Eilish</div>
+        </div>
+        <div class="controls">
+            <button class="button" id="playPause">▶</button>
+        </div>
+    </div>
+    <audio id="audio" src="Billie Eilish - BIRDS OF A FEATHER (Official Lyric Video).mp3" loop></audio>
+
+<div class="about"></div>
+
+
+    <div class="container anjy">
+        <h2 class="anjy">(੭˃ᴗ˂)੭ Anjy <img src="weeee.jpg" alt="anjy" style="max-width: 130px; float: right; margin-left: 15px; border-radius: 5px;"></h2>
+        <p>Hello! I’m a 4th-year IT student with a passion for technology and a love for nature. I enjoy spending time in peaceful places, away from social media.</p>
+    </div>
+
+    <div class="container interest">
+        <h2 class="interest">Interests ৻(  •̀ ᗜ •́  ৻)</h2>
+        <p>My favorite moments are those spent laughing with friends and cherishing time with family. I also love reading and writing poetry. I’m an Army fan! Attending church and praying the rosary have become important parts of my life.</p>
+    </div>
+
+    <div class="container pol">
+        <h2 class="pol">We'll Tag Along If— ദ്ദി(˵ •̀ ᴗ - ˵ )</h2>
+        <p>You love talking about politics. I’m politically active and enjoy discussing various topics, especially politics in the Philippines. Let’s not ignore what’s happening around us. I believe every voice matters, and engaging in discussions helps us understand different perspectives.</p>
+    </div>
+
+    <div class="container hike">
+        <h2 class="hike">(∩˃o˂∩) Hiking ♡ ᨒ ོ ☼<img src="yay.jpg" alt="Hiking" style="max-width: 130px; float: right; margin-left: 15px; border-radius: 5px;"></h2>
+        <p>Hiking is another passion of mine. After a total of three hours hiking up Mt. Pinatubo and another three hours coming down, I can confidently say that the six-hour journey is worthwhile for the beautiful scenery at the destination.</p>
+    </div>
+
+   <section>
+    <h2 class>Top Picks</h2>
+    <div class="favorites">
+
+        <div class="favorite-item book">
+            <h3 class="book">Book</h3>
+            <img src="DOS.jpg" alt="Favorite Book">
+            <p>The way the story talks about hope and recovery gives me a sense of reassurance that things can get better, even when I’m feeling low. It’s like a warm hug that reminds me it’s okay to struggle and that I’m not the only one dealing with these issues.</p>
+        </div>
+
+        <div class="favorite-item song">
+            <h3 class="song">Song</h3>
+            <video width="200" controls>
+                <source src="Backburner.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>In 'Backburner' by NIKI, the line 'Hey, are you still there?' captures that longing for connection and the fear of being forgotten, reminding us all how important it is to feel valued and recognized.</p>
+        </div>
+       
+        <div class="favorite-item series">
+            <h3 class="series">Series</h3>
+            <img src="1_VBtEuiubbbodobyG65ORMw@2x.jpg" alt="Favorite Series">
+            <p>It focuses on issues such as orphaning, child abandonment, psychological trauma, and social topics like conformity, gender inequality, racism, religion, homosexuality, bullying, and freedom of speech.</p>
+        </div>
+        
+        <div class="favorite-item docuseries">
+            <h3 class="comfortdocu">Comfort Docu-series</h3>
+            <img src="bts.jpg" alt="Favorite Series 2">
+            <p>The documentary features their emotional honesty, allowing viewers to connect with their struggles and dreams. Its themes of resilience and self-love resonate deeply, inspiring many.</p>
+        </div>
+    </div>
+</section>
+
+    <div class="letter-container">
+        <button class="btn btn-custom" id="revealButton">A short poem written by Anjy for you, the reader.</button>
+        <div class="letter-content" id="letterContent">
+            <p>
+                In this life, we must keep moving, („• ֊ •„)੭ <br>
+                Even when it gets tough, let’s keep on proving. <br>
+                Living can be hard, but let’s find the light— <br>
+                Enjoy every moment, hold on tight. <br><br>
+                
+                You’re the light in your own story, <br>
+                Take care; we’re all in this together. <br>
+                Mental health matters, so don’t hesitate— <br>
+                Reach out for guidance; it’s never too late.  <br>
+                
+            </p>
+        </div>
+    </div>
+
+    <section class="hobbies">
+        <h2 class="life">My Album (˶˃⤙˂˶)</h2>
+        <div class="hobby-images"> 
+            <img src="book.jpg" alt="BOOK" />
+            <img src="hiking.jpg" alt="Hiking" />
+            <img src="bangtanarmy.jpg" alt="them <3" />
+            <img src="nature.jpg" alt="Nature" />
+            <img src="duomo.jpg" alt="Going to church" />
+            <img src="bangtan.jpg" alt="bangtan" />
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h5>&copy; 2024 Anjanette. ૮₍´˶• . • ⑅ ₎ა</h5>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#revealButton').click(function() {
+                $('#letterContent').toggleClass('show');
+            });
+        });
+
+
+        const playPauseButton = document.getElementById('playPause');
+    const audio = document.getElementById('audio');
+    const nowPlaying = document.getElementById('nowPlaying');
+    const songTitle = document.getElementById('songTitle');
+    const songArtist = document.getElementById('songArtist');
+
+    playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play().then(() => {
+                playPauseButton.textContent = '⏸';
+                nowPlaying.style.display = 'block';
+            }).catch(error => {
+                console.error("Playback error:", error);
+            });
+        } else {
+            audio.pause();
+            playPauseButton.textContent = '▶';
+            nowPlaying.style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html>
